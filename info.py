@@ -35,7 +35,7 @@ COVERX = bool(environ.get('COVERX', True)) # Use cover image for indexed files (
 PICS_URL = (environ.get('PICS', 'https://api.aniwallpaper.workers.dev/random?type=girl')).split() #random anime girl img each time from aniwallpaper (Experimental)
 PICS = (environ.get('PICS', 'https://graph.org/file/56b5deb73f3b132e2bb73.jpg https://graph.org/file/5303692652d91d52180c2.jpg https://graph.org/file/425b6f46efc7c6d64105f.jpg https://graph.org/file/876867e761c6c7a29855b.jpg')).split()  # Sample pic
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/e20b5fdaf217252964202.jpg")
-MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://files.catbox.moe/xaugwv.jpg")
+MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://files.catbox.moe/bbopba.jpg")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/13702ae26fb05df52667c.jpg")
 SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://files.catbox.moe/kk2ltl.jpg'))
 FSUB_PICS = (environ.get('FSUB_PICS', 'https://graph.org/file/7478ff3eac37f4329c3d8.jpg https://graph.org/file/56b5deb73f3b132e2bb73.jpg')).split()  # Fsub pic
@@ -50,9 +50,9 @@ LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003007009220'))  # Log channel i
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003007009220'))  # Bin channel id (make sure bot is admin)
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-100'))  # Premium logs channel id
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-100').split()] #(make sure bot is admin)
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-100')  # Support group id (make sure bot is admin)
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-100')  # Request channel id (make sure bot is admin)
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/')  # Support group link (make sure bot is admin)
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002583639083')  # Support group id (make sure bot is admin)
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002485029394')  # Request channel id (make sure bot is admin)
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/movies4uhd123')  # Support group link (make sure bot is admin)
 
 # FORCE_SUB 
 auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "-100")# requst to join Channel for force sub (make sure bot is admin) only for bot ADMINS  
