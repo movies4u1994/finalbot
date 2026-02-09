@@ -65,11 +65,11 @@ QR_CODE = environ.get('QR_CODE', 'https://files.catbox.moe/kk2ltl.jpg')    # QR 
 OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'Shelkeanant14@okicici')    # Owner UPI ID for payments
 
 STAR_PREMIUM_PLANS = {
-    10: "7day",
-    20: "15day",    
-    40: "1month", 
-    55: "45day",
-    75: "60day",
+    10: "15day",
+    20: "30day",    
+    40: "3month", 
+    75: "6month",
+    110: "1year",
 }  # Premium plans with their respective durations in days
 
 # ============================
