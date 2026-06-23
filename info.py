@@ -66,7 +66,7 @@ OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'Shelkeanant14@okicici')    # Owner U
 
 STAR_PREMIUM_PLANS = {
     10: "30day",
-    20: "2month",    
+    20: "3month",    
     40: "4month", 
     75: "8month",
     110: "1year",
