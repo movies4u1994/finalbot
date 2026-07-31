@@ -2000,22 +2000,48 @@ async def auto_filter(client, msg, spoll=False):
 
 async def ai_spell_check(chat_id, wrong_name):
     async def search_movie(wrong_name):
-        search_results = imdb.search_movie(wrong_name)
-        movie_list = [movie.title for movie in search_results.titles]
-        return movie_list
+        try:
+            import os
+            import requests
+
+            api_key = os.environ.get("TMDB_API_KEY")
+
+            r = requests.get(
+                "https://api.themoviedb.org/3/search/movie",
+                params={
+                    "api_key": api_key,
+                    "query": wrong_name
+                },
+                timeout=10
+            )
+
+            data = r.json()
+
+            if not data.get("results"):
+                return []
+
+            return [movie["title"] for movie in data["results"] if movie.get("title")]
+
+        except Exception as e:
+            logger.exception(e)
+            return []
+
     movie_list = await search_movie(wrong_name)
     if not movie_list:
         return
+
     for _ in range(5):
         closest_match = process.extractOne(wrong_name, movie_list)
         if not closest_match or closest_match[1] <= 80:
             return
+
         movie = closest_match[0]
         files, _, _ = await get_search_results(chat_id=chat_id, query=movie)
+
         if files:
             return movie
-        movie_list.remove(movie)
 
+        movie_list.remove(movie)
 async def advantage_spell_chok(client, message):
     mv_id = message.id
     search = message.text
