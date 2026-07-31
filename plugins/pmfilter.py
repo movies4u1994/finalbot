@@ -2016,6 +2016,8 @@ async def ai_spell_check(chat_id, wrong_name):
             )
 
             data = r.json()
+            logger.info(f"TMDB Status: {r.status_code}")
+logger.info(f"TMDB Response: {data}")
 
             if not data.get("results"):
                 return []
