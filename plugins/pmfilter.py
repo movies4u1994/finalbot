@@ -2015,15 +2015,14 @@ async def ai_spell_check(chat_id, wrong_name):
                 timeout=10
             )
 
-            data = r.json()
-            logger.info(f"TMDB Status: {r.status_code}")
-logger.info(f"TMDB Response: {data}")
+           data = r.json()
 
-            if not data.get("results"):
-                return []
+if not data.get("results"):
+    return []
 
-            return [movie["title"] for movie in data["results"] if movie.get("title")]
+return [movie["title"] for movie in data["results"] if movie.get("title")] 
 
+   
         except Exception as e:
             logger.exception(e)
             return []
