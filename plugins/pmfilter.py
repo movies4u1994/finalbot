@@ -1999,7 +1999,7 @@ async def auto_filter(client, msg, spoll=False):
         return
 
 async def ai_spell_check(chat_id, wrong_name):
-    async def search_movie(wrong_name):
+        async def search_movie(wrong_name):
         try:
             import os
             import requests
@@ -2015,14 +2015,13 @@ async def ai_spell_check(chat_id, wrong_name):
                 timeout=10
             )
 
-           data = r.json()
+            data = r.json()
 
-if not data.get("results"):
-    return []
+            if not data.get("results"):
+                return []
 
-return [movie["title"] for movie in data["results"] if movie.get("title")] 
+            return [movie["title"] for movie in data["results"] if movie.get("title")]
 
-   
         except Exception as e:
             logger.exception(e)
             return []
