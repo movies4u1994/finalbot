@@ -1999,7 +1999,7 @@ async def auto_filter(client, msg, spoll=False):
         return
 
 async def ai_spell_check(chat_id, wrong_name):
-        async def search_movie(wrong_name):
+    async def search_movie(wrong_name):
         try:
             import os
             import requests
