@@ -528,7 +528,7 @@ async def save_file_handler(bot, message):
         media.caption = reply.caption
         success, status = await save_file(media)
         if success:
-    await msg.edit('FILE IS SUCCESSFULLY SAVED TO DATABASE ✅')
+            await msg.edit('FILE IS SUCCESSFULLY SAVED TO DATABASE ✅')
 
     try:
         # Main Group ID
