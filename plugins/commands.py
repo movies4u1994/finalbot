@@ -530,7 +530,7 @@ async def save_file_handler(bot, message):
         if success:
             await msg.edit('FILE IS SUCCESSFULLY SAVED TO DATABASE ✅')
 
-    try:
+    tr
         # Main Group ID
         MAIN_GROUP_ID = -1003731922655
 
