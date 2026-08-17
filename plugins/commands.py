@@ -528,76 +528,8 @@ async def save_file_handler(bot, message):
         media.caption = reply.caption
         success, status = await save_file(media)
         if success:
-            await msg.edit('FILE IS SUCCESSFULLY SAVED TO DATABASE ✅')
-
-    tr
-        # Main Group ID
-        MAIN_GROUP_ID = -1003731922655
-
-        # Movie file name
-        file_name = getattr(media, "file_name", "") or "Unknown Movie"
-
-        # Remove extension
-        movie_name = re.sub(r"\.[^.]+$", "", file_name)
-
-        # Remove common quality/technical tags
-        movie_name = re.sub(
-            r"\b(480p|720p|1080p|2160p|4K|WEB-DL|WEBRip|BluRay|"
-            r"BRRip|HDRip|HDTV|x264|x265|HEVC|AAC|ESub|ESubs|ESubbed)\b",
-            "",
-            movie_name,
-            flags=re.IGNORECASE
-        )
-
-        # Clean movie name
-        movie_name = re.sub(r"[\[\]\(\)\._]+", " ", movie_name)
-        movie_name = re.sub(r"\s+", " ", movie_name).strip()
-
-        # Detect language
-        language = "Unknown"
-
-        languages = [
-            "Hindi", "English", "Marathi", "Tamil", "Telugu",
-            "Malayalam", "Kannada", "Bengali", "Punjabi",
-            "Gujarati", "Urdu", "Dual Audio", "Multi Audio"
-        ]
-
-        for lang in languages:
-            if re.search(
-                rf"\b{re.escape(lang)}\b",
-                file_name,
-                re.IGNORECASE
-            ):
-                language = lang
-                break
-
-        # Notification caption
-        caption = (
-            f"🎬 <b>Movie Name :-</b> {escape(movie_name)}\n\n"
-            f"🌐 <b>Language :-</b> {escape(language)}\n\n"
-            f"📤 <b>Uploaded By :-</b> Movies 4U HD✅\n\n"
-            f"<b>\"STAY CONNECTED STAY UPDATED\"</b>"
-        )
-
-        # Movie poster
-        cover = getattr(media, "cover", None)
-
-        if cover:
-            await client.send_photo(
-                chat_id=MAIN_GROUP_ID,
-                photo=cover,
-                caption=caption
-            )
-        else:
-            await client.send_message(
-                chat_id=MAIN_GROUP_ID,
-                text=caption
-            )
-
-    except Exception as e:
-        logger.exception(
-            f"Failed to send new movie notification: {e}"
-        )
+            await msg.edit('FILE IS SUCCESSFULLY SAVED TO DATABASE ✅'
+                           
 
 elif status == 0:
     await msg.edit('FILE ALREADY EXISTS IN DATABASE ⚠️')
