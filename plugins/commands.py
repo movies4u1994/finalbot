@@ -527,19 +527,26 @@ async def save_file_handler(bot, message):
         media.file_type = file_type
         media.caption = reply.caption
         success, status = await save_file(media)
-        if success:
-            await msg.edit('FILE IS SUCCESSFULLY SAVED TO DATABASE ✅'
-                           
+
+if success:
+    await msg.edit(
+        'FILE IS SUCCESSFULLY SAVED TO DATABASE ✅'
+    )
 
 elif status == 0:
-    await msg.edit('FILE ALREADY EXISTS IN DATABASE ⚠️')
+    await msg.edit(
+        'FILE ALREADY EXISTS IN DATABASE ⚠️'
+    )
 
 elif status == 2:
-    await msg.edit('ERROR: FILE VALIDATION FAILED ❌')
+    await msg.edit(
+        'ERROR: FILE VALIDATION FAILED ❌'
+    )
 
 else:
-    await msg.edit('ERROR: FAILED TO SAVE FILE ❌')
-        
+    await msg.edit(
+        'ERROR: FAILED TO SAVE FILE ❌'
+    )
     except Exception as e:
         logger.exception(e)
         await msg.edit(f'Aɴ ᴜɴᴇxᴘᴇᴄᴛᴇᴅ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ: {e} ❌')
